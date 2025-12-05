@@ -7,8 +7,8 @@ from pykrige.ok import OrdinaryKriging
 from regression import spatial_residuals_cubic, coefficients_cubic, x, y 
 
 
-data = spatial_residuals_cubic 
-lat, lon, z = data[:, 0], data[:, 1], data[:, 2] # Extract Y, X, and Residual (Z)
+data = spatial_residuals_cubic #I used cubic but use whatever recommended equation comes out of regression calc here
+lat, lon, z = data[:, 0], data[:, 1], data[:, 2] # Y, X, and Residual (Z)
 
 
 num_points = 200
@@ -62,3 +62,4 @@ plt.ylabel('Latitude')
 plt.legend()
 plt.grid(True)
 plt.show()
+
