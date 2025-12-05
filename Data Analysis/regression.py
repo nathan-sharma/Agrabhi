@@ -198,7 +198,6 @@ for i in range(len(x)):
 residuals_quadratic_array = np.array(residuals_quadratic_list)
 spatial_residuals_quadratic = np.column_stack((latitudes, longitudes, residuals_quadratic_array))
 
-
 residuals_cubic_list = []
 
 for i in range(len(x)):
@@ -217,4 +216,5 @@ spatial_residuals_log = np.column_stack((latitudes, longitudes, residuals_log))
 
 y_predicted_exp = exponential_model(x) 
 residuals_exp = y - y_predicted_exp
+
 spatial_residuals_exp = np.column_stack((latitudes, longitudes, residuals_exp))
