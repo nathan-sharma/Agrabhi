@@ -1,3 +1,4 @@
+#coded by Nathan
 import numpy as np 
 import matplotlib.pyplot as plt 
 from scipy.optimize import curve_fit
@@ -142,3 +143,4 @@ spatial_residuals_log = np.column_stack((latitudes, longitudes, residuals_log))
 y_predicted_exp = exponential_model(x) 
 residuals_exp = y - y_predicted_exp
 spatial_residuals_exp = np.column_stack((latitudes, longitudes, residuals_exp))
+
