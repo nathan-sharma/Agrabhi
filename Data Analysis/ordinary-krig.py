@@ -36,7 +36,7 @@ for i in range(n):
 print("-" * 50) 
 rmse_value = np.sqrt(np.mean(np.array(differences)**2))
 mean_error = np.mean(np.array(differences))
-print("RMSE score: " + str(rmse_value) + "%")
+print("RMSE score: " + str(rmse_value))
 print("Mean Error: " + str(mean_error))
 num_points = 200
 grid_x = np.linspace(lon.min(), lon.max(), num_points)
