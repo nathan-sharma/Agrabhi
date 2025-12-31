@@ -68,3 +68,11 @@ plt.ylabel('Latitude')
 plt.legend()
 plt.grid(True)
 plt.show()
+input_lon = float(input("Enter longitude for point to be predicted: "))
+input_lat = float(input("Enter latitude for point to be predicted: "))
+pred, variance = OK_res.execute('points', [input_lon], [input_lat])
+sigma_squared = variance[0]
+sigma = np.sqrt(sigma_squared) 
+prediction = pred[0] 
+print("Predicted moisture value at " + str(input_lat) + "," + str(input_lon) + " is " + str(prediction) + " % GWC.")
+print("Standard deviation/uncertainty: +/- " + str(sigma) + " % GWC.")
