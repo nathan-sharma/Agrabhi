@@ -86,6 +86,22 @@ plt.ylabel('Latitude')
 plt.legend()
 plt.grid(True)
 plt.show()
+input_lon = float(input("Enter longitude for point to be predicted: "))
+input_lat = float(input("Enter latitude for point to be predicted: "))
+input_elev = float(input("Enter elevation in meters for point to be predicted: "))
+
+OK_input = OrdinaryKriging( 
+    lon, lat, z, variogram_model='linear',  
+    verbose=False, enable_plotting=False,
+)
+residual_pred, residual_variance = OK_input.execute('points', [input_lon], [input_lat])
+
+sigma_squared = residual_variance[0]
+sigma = np.sqrt(sigma_squared) 
+
+prediction = residual_pred[0] + linear_trend(input_elev) #change
+print("Predicted moisture value at " + str(input_lat) + "," + str(input_lon) + " with " + str(input_elev) + " m elevation is " + str(prediction) + " % GWC.")
+print("Standard deviation/uncertainty: +/- " + str(sigma) + " % GWC.")
 
 
 
